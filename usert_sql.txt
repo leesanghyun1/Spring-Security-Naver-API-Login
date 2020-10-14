@@ -1,0 +1,13 @@
+create table USERT
+(
+  ID varchar2(25) NOT NULL ,
+  PASSWORD varchar2(255) NOT NULL,
+  NAME varchar2(255),
+  ENABLED integer DEFAULT '1' NOT NULL,
+  AUTHORITY varchar2(20) DEFAULT 'ROLE_USER' NOT NULL
+);
+
+ALTER TABLE USERT ADD PRIMARY KEY(ID);
+
+INSERT INTO USERT (ID,PASSWORD,NAME,ENABLED,AUTHORITY) VALUES ('test','123','hee',1,'ROLE_USER');
+,('admin','123','park',1,'ROLE_ADMIN'),('user','123','hee',1,'ROLE_USER');
