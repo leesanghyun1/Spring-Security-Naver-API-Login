@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+	<insert id="insertUser">
+		INSERT INTO USERT(ID,PASSWORD,NAME,ENABLED,AUTHORITY)
+		VALUES(#{id},#{password},#{name},1,#{authority})
+	</insert>
+	
+	<select id="selectUser" resultType="map">
+		select 
+			id as username,
+		    password as password,
+		    ENABLED as enabled,
+		    AUTHORITY as authority,
+		    name
+		from
+			USERT
+		where 
+			id = #{username}
+	</select>	
+</mapper>
